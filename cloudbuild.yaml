@@ -1,8 +1,19 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/zonlin-morquecho:latest', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/zonlin-morquecho:$SHORT_SHA', '.']
   
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/zonlin-morquecho:latest']
+    args: ['push', 'gcr.io/$PROJECT_ID/zonlin-morquecho:$SHORT_SHA']
+  
+  - name: 'gcr.io/cloud-builders/run'
+    args:
+      - deploy
+      - zonlin-morquecho
+      - '--image'
+      - 'gcr.io/$PROJECT_ID/zonlin-morquecho:$SHORT_SHA'
+      - '--region'
+      - europe-west1
+      - '--platform'
+      - managed
 
-images: ['gcr.io/$PROJECT_ID/zonlin-morquecho:latest']
+images: ['gcr.io/$PROJECT_ID/zonlin-morquecho:$SHORT_SHA']
