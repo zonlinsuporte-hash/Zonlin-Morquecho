@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY backend/package*.json ./
 
-RUN npm install --break-system-packages
+RUN npm install
 
 COPY backend/ ./
 
 EXPOSE 3000
 
-CMD ["node", "function.js"]
+CMD ["node", "function.js"]ssss
