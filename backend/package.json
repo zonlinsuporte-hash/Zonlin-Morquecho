@@ -1,0 +1,10 @@
+{
+  "name": "zonlin-crm-backend",
+  "version": "1.0.0",
+  "description": "Backend de Zonlin CRM con Google Sheets API",
+  "main": "function.js",
+  "dependencies": {
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^118.0.0"
+  }
+}
