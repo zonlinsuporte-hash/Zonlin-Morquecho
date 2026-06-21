@@ -2,8 +2,7 @@ const { google } = require('googleapis');
 const { GoogleAuth } = require('google-auth-library');
 
 // ID de tu Google Sheet (lo obtendremos después)
-const SPREADSHEET_ID = 'TU_SPREADSHEET_ID_AQUI';
-
+const SPREADSHEET_ID = '1WRUYKJpg66kyAMoDZ7I-l8U8TOYV7R-E2-opbcX8mNU';
 // Credenciales (se configuran en Cloud Functions)
 const auth = new GoogleAuth({
     scopes: ['https://www.googleapis.com/auth/spreadsheets']
